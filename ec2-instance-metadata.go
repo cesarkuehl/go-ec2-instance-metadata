@@ -35,7 +35,7 @@ func printValue(resourcePath string) {
 func printHelp() {
 	fmt.Println("Welcome to EC2 meta-data retriever")
 	fmt.Println("Usage:")
-	fmt.Println("$ ec2-metadata <option>")
+	fmt.Println("$ ec2-instance-metadata <option>")
 	fmt.Println("")
 	fmt.Println("These are some of the valid options, for a complete list use the option: options")
 	fmt.Println("")

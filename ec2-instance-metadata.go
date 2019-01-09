@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"strings"
@@ -21,10 +22,13 @@ func printValue(resourcePath string) {
 		return
 	}
 
+	bodyBytes, _ := ioutil.ReadAll(response.Body)
+	bodyString := string(bodyBytes)
+
 	if resourcePath == "options" {
-		fmt.Printf("%s\n\n", response.Body)
+		fmt.Printf("%s\n\n", bodyString)
 	} else {
-		fmt.Printf("%s: %s\n\n", resourcePath, response.Body)
+		fmt.Printf("%s: %s\n\n", resourcePath, bodyString)
 	}
 }
 
